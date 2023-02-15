@@ -14,8 +14,9 @@
 		"start:eel": "npm run build && python eelApp.py --console",
 		"start:eel-nb": "python eelApp.py --console",
 		"start:eel-dev": "python eelApp.py --console --dev",
-		"build:eel-generate-spec": "npm run build && python -m eel eelApp.py build -y",
-		"build:eel": "npm run build && pyinstaller eelApp.spec -y"
+		"build:eel-generate-spec": "npm run build && python -m eel eelApp.py build -y --noconsole",
+		"build:eel": "npm run build && pyinstaller eelApp.spec -y",
+		"build:eel-generate-spec-onefile": "npm run build && python -m eel eelApp.py build -y --onefile --noconsole"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
