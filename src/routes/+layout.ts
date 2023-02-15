@@ -1,4 +1,4 @@
-import type { PageLoad } from './$types';
+import type { LayoutLoad } from './$types';
 import { locale, loadTranslations } from '$lib/translations';
 import defaults from '$lib/defaults.json';
 
@@ -6,7 +6,7 @@ export const prerender = true;
 export const ssr = false;
 export const trailingSlash = 'always';
 
-export const load: PageLoad = async () => {
+export const load: LayoutLoad = async () => {
 	// local storage
 	const userLocale = localStorage.getItem('locale');
 	if (userLocale) {
@@ -17,7 +17,8 @@ export const load: PageLoad = async () => {
 	console.log(localStorage.getItem('locale'));
 
 	const defaultLocale = defaults.locale;
-	const initLocale = locale.get() || defaultLocale;
+	const initLocale = userLocale || defaultLocale;
+	console.log(initLocale);
 
 	await loadTranslations(initLocale);
 
