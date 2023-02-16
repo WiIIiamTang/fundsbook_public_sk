@@ -14,11 +14,9 @@ export const load: LayoutLoad = async () => {
 	} else {
 		localStorage.setItem('locale', defaults.locale);
 	}
-	console.log(localStorage.getItem('locale'));
 
 	const defaultLocale = defaults.locale;
 	const initLocale = userLocale || defaultLocale;
-	console.log(initLocale);
 
 	await loadTranslations(initLocale);
 
