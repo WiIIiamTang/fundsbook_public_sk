@@ -30,12 +30,12 @@
 
 	const handleCnClick = () => {
 		locale.set('cn');
-		localStorage.setItem('locale', 'cn');
+		localStorage.setItem('fbpsk_config_locale', 'cn');
 	};
 
 	const handleEnClick = () => {
 		locale.set('en');
-		localStorage.setItem('locale', 'en');
+		localStorage.setItem('fbpsk_config_locale', 'en');
 	};
 </script>
 

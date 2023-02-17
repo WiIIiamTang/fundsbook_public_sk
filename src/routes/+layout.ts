@@ -8,11 +8,11 @@ export const trailingSlash = 'always';
 
 export const load: LayoutLoad = async () => {
 	// local storage
-	const userLocale = localStorage.getItem('locale');
+	const userLocale = localStorage.getItem('fbpsk_config_locale');
 	if (userLocale) {
 		locale.set(userLocale);
 	} else {
-		localStorage.setItem('locale', defaults.locale);
+		localStorage.setItem('fbpsk_config_locale', defaults.locale);
 	}
 
 	const defaultLocale = defaults.locale;
